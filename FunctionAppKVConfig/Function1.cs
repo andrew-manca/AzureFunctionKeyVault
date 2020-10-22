@@ -25,10 +25,10 @@ namespace FunctionAppStartupLogging
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("fakesecret1 is: " + _config["fakesecret1"]);
+            log.LogInformation("fakesecret1 is: " + _config["test-secret"]);
 
             //disclaimer: don't ever actually return a sensitive secret in an http response - this is just for quick demonstration
-            return new OkObjectResult($"fakesecret1 is: " + _config["fakesecret1"]);
+            return new OkObjectResult($"fakesecret1 is: " + _config["test-secret"]);
         }
     }
 }
